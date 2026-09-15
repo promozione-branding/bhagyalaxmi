@@ -52,7 +52,7 @@ export async function PUT(req, { params }) {
       // upload to R2
       const uploadedImage = await uploadToR2({
         file: buffer,
-        folder: "newTech",
+        folder: "bhagyalaxmi",
         fileName,
         contentType: newFile.type,
       });
