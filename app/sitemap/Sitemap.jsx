@@ -44,16 +44,7 @@ export default function Sitemap() {
                         {item.name}
                     </Link>
                 ))}
-                {categories.map((item) => (
-                    <Link
-                        key={item.name}
-                        href={`products`}
-                        className="p-6 bg-white rounded-xl border border-gray-300 content-center
-                         hover:border-blue-500 hover:shadow-lg transition-all text-center"
-                    >
-                        {item.name}
-                    </Link>
-                ))}
+              
                 {products.map((item) => (
                     <Link
                         key={item.name}
