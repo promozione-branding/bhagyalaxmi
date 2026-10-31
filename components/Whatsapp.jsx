@@ -1,11 +1,13 @@
 // WhatsAppChat.jsx
 'use client'
+import { handleWhatsappClick } from "@/track";
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
 const Whatsapp = () => {
   return (
     <a
+    onClick={() => handleWhatsappClick({ source: "Website Sticky Button", })}
       href="https://wa.me/+919560156328"
       target="_blank"
       rel="noopener noreferrer"

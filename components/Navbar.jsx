@@ -17,6 +17,7 @@ import { useRouter } from "next/navigation";
 import Dealer from "./landingpage/Dealer";
 import { products } from "@/Data";
 import { FaWhatsapp } from "react-icons/fa";
+import { handleCallClick, handleWhatsappClick } from "@/track";
 
 export default function Header({ onClose }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -83,6 +84,7 @@ export default function Header({ onClose }) {
             {/* Desktop Actions */}
             <div className="hidden lg:flex items-center gap-3">
               <a
+                 onClick={() => handleCallClick({ source: "Website Navbar", })}
                 href="tel:+919560156328"
                 className="bg-lime-500 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2"
               >
@@ -91,6 +93,7 @@ export default function Header({ onClose }) {
               </a>
 
               <a
+                 onClick={() => handleWhatsappClick({ source: "Website Navbar", })}
                 href="https://wa.me/919560156328"
                 className="bg-lime-500 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2"
               >

@@ -9,6 +9,7 @@ import Navbar from "@/components/Navbar";
 import Link from "next/link";
 import ProductSectionPremium from "@/components/landingpage/Bestseller";
 import ProductCategorySlider from "@/components/landingpage/Productcategory";
+import { handleCallClick } from "@/track";
 
 
 export default function CityPage() {
@@ -437,7 +438,7 @@ export default function CityPage() {
                 </div>
 
                 <div>
-                    <a href="tel:+919560156328" className="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
+                    <a  onClick={() => handleCallClick({ source: "Website City Pg", })} href="tel:+919560156328" className="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
                         Connect Now
                     </a>
                 </div>

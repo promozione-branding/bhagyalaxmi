@@ -25,6 +25,7 @@ import Enquiry from "@/components/Enquiry";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 
 import { auth } from "@/utils/firebase";
+import { handleCallClick, handleWhatsappClick } from "@/track";
 
 /* Images */
 const Cooler = "/check3.webp";
@@ -243,6 +244,7 @@ const Inquiry = () => {
 
             <div className="flex mt-10 lg:justify-start justify-center">
               <a
+              onClick={() => handleWhatsappClick({ source: "Website Inquiry pg", })}
                 href="https://wa.me/919560156328"
                 className="bg-lime-500 hover:bg-lime-600 text-white px-5 py-3 rounded-lg font-semibold flex items-center gap-2"
               >
@@ -486,6 +488,7 @@ const Inquiry = () => {
             {/* CTA Button */}
             <div className="flex justify-center md:justify-end">
               <a
+                 onClick={() => handleCallClick({ source: "Website Inquiry", })}
                 href="tel:+919560156328"
                 className="group bg-white text-indigo-600 hover:bg-indigo-50 px-7 py-3 rounded-md font-semibold transition-all duration-300 flex items-center gap-2"
               >

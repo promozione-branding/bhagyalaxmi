@@ -4,6 +4,7 @@ import Link from "next/link";
 import { CheckCheck } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { AiFillProduct } from "react-icons/ai";
+import { handleWhatsappClick } from "@/track";
 
 
 const Image = lazy(() => import("next/image"));
@@ -186,6 +187,7 @@ export default function ProductSectionPremium() {
               </div>
                 <div className="flex gap-2">
               <a
+                onClick={() => handleWhatsappClick({ source: "Website BestSeller", obj:product.name })}
                 href={`https://wa.me/9560156328?text=I want to enquire about ${product.name}`}
                 target="_blank"
                 rel="noopener noreferrer"

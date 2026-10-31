@@ -1,4 +1,5 @@
 'use client'
+import { handleWhatsappClick } from '@/track'
 import { FaWhatsapp, FaInstagram, FaEnvelope, FaFacebookF } from 'react-icons/fa'
 
 const SocialBar = () => {
@@ -6,6 +7,7 @@ const SocialBar = () => {
     <div className=" fixed top-1/3 right-0 z-50 flex-col items-center space-y-3">
       {/* WhatsApp */}
       <a
+       onClick={() => handleWhatsappClick({ source: "Website Sticky", })}
         href="https://wa.me/+919560156328"
         target="_blank"
         rel="noopener noreferrer"
