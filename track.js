@@ -1,7 +1,7 @@
 const TRACKING_API = "https://brandbnalo.com/api/tracking/create";
 
 // Set your default supplier ID here
-const DEFAULT_SUPPLIER_TOKEN = process.env.NEXT_PUBLIC_SUPPLIER_TOKEN || "6a9fbb5cd936bdc2bb1d74d5";
+const DEFAULT_SUPPLIER_TOKEN = process.env.NEXT_PUBLIC_SUPPLIER_TOKEN || "6a2ce60e0dd27bd1398df008";
 
 export const trackEvent = ({ eventType, obj = null, source = "Website", supplierToken, }) => {
     const payload = {
