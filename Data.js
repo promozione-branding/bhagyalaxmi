@@ -1020,8 +1020,8 @@ export const products = [
       { "label": "Automation Grade", "value": "Automatic" }
     ],
 
-    "metaTitle": "Milk Chilling Plant – Stainless Steel Automatic Dairy Milk Cooling",
-    "metaDescription": "Milk Chilling Plant with 12 HP power, stainless steel body, PHE plate heat exchanger, and automatic operation. Ideal for dairy farms and milk processing units."
+    "metaTitle": "Milk Chilling Plant Manufacturer in India | Bhagyalaxmi Industries",
+    "metaDescription": "Bhagyalaxmi Industries is a trusted milk chilling plant manufacturer in India, offering efficient and reliable milk cooling solutions for dairy farms and milk processing industries."
   },
 
   {
