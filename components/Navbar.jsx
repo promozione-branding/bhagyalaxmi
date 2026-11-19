@@ -125,7 +125,7 @@ export default function Header({ onClose }) {
               ☰ Milk Cooling Solutions
             </Link>
 
-            <nav className="flex items-center gap-8 text-white font-semibold">
+            <nav className="flex items-center gap-6 text-white font-semibold">
               <Link href="/" className="hover:text-lime-300">
                 Home
               </Link>
@@ -141,6 +141,9 @@ export default function Header({ onClose }) {
               >
                 Dealer Inquiry
               </button>
+              <Link href="/dairy-processing-plant" className="hover:text-lime-300">
+                Dairy Processing Plant
+              </Link>
               <Link href="/contact-us" className="hover:text-lime-300">
                 Contact
               </Link>
