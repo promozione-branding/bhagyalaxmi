@@ -87,9 +87,10 @@ export default function ContactPage() {
 
     const formData = new FormData(e.target);
 
+const webisteUrl = window.location.hostname + window.location.pathname;
     const data = {
       supplierToken: "6a2ce60e0dd27bd1398df008",
-      platform: "BhagyaLaxmi Industries About Us Form",
+      platform: webisteUrl || "BhagyaLaxmi Industries About Us Form",
       platformEmail: "bhagyalaxmigroup12@gmail.com",
       name: formData.get("name"),
       email: formData.get("email"),
@@ -255,6 +256,8 @@ export default function ContactPage() {
                     <input
                       type="tel"
                       name="phone"
+                        maxLength={10}
+                  minLength={10}
                       required
                       placeholder=" "
                       className="peer w-full border border-blue-200 px-4 pt-6 pb-2 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none"

@@ -130,9 +130,11 @@ export default function Dealer({ isOpen, onClose }) {
     const formData =
       new FormData(e.target);
 
+      const webisteUrl = window.location.hostname + window.location.pathname;
+
     const data = {
       supplierToken: "6a2ce60e0dd27bd1398df008",
-      platform:
+      platform:webisteUrl ||
         "BhagyaLaxmi Industries Dealer Inquiry Form",
 
       platformEmail:
@@ -301,6 +303,8 @@ export default function Dealer({ isOpen, onClose }) {
                 <input
                   className="input"
                   type="tel"
+                    maxLength={10}
+                  minLength={10}
                   name="phone"
                   placeholder="Phone*"
                 />

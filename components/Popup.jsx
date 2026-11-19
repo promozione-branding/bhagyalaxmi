@@ -13,8 +13,14 @@ import {
 
 import { auth } from "@/utils/firebase";
 
-export default function PopupForm({ onClose }) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function PopupForm({ onClose, isOpen: controlledIsOpen }) {
+  const [isOpen, setIsOpen] = useState(controlledIsOpen ?? false);
+
+  useEffect(() => {
+    if (controlledIsOpen !== undefined) {
+      setIsOpen(controlledIsOpen);
+    }
+  }, [controlledIsOpen]);
 
   const [loading, setLoading] = useState(false);
 
@@ -27,12 +33,14 @@ export default function PopupForm({ onClose }) {
     useState(null);
 
   useEffect(() => {
+    if (controlledIsOpen !== undefined) return;
+
     const timer = setTimeout(() => {
       setIsOpen(true);
     }, 4000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [controlledIsOpen]);
 
   if (!isOpen) return null;
 
@@ -124,9 +132,11 @@ export default function PopupForm({ onClose }) {
     const formData =
       new FormData(e.target);
 
+      const webisteUrl = window.location.hostname + window.location.pathname;
+
     const data = {
         supplierToken: "6a2ce60e0dd27bd1398df008",
-      platform:
+      platform:webisteUrl ||
         "BhagyaLaxmi Industries Popup Form",
 
       platformEmail:
@@ -333,6 +343,8 @@ export default function PopupForm({ onClose }) {
                 <input
                   type="tel"
                   name="phone"
+                  maxLength={10}
+                  minLength={10}
                   required
                   placeholder="Mobile Number*"
                   className="input"

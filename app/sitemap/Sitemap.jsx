@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/landingpage/Footer";
 import Link from 'next/link';
-import { categories, cites, products } from '@/Data';
+import { categories, products } from '@/Data';
 
 export default function Sitemap() {
     const sitemapItems = [
@@ -12,6 +12,7 @@ export default function Sitemap() {
         { name: "Blogs", link: "/blogs" },
         // { name: "Dealer Inquiry", link: "/dealer-inquiry" },
         { name: "Contact", link: "/contact-us" },
+        { name: "Dairy Processing Plant", link: "/dairy-processing-plant" },
     ]
 
     return (<>
@@ -55,16 +56,7 @@ export default function Sitemap() {
                         {item.name}
                     </Link>
                 ))}
-                {cites.map((item) => (
-                    <Link
-                        key={item.label}
-                        href={`${item.href}`}
-                        className="p-6 bg-white rounded-xl border border-gray-300 content-center
-                         hover:border-blue-500 hover:shadow-lg transition-all text-center"
-                    >
-                        {item.label}
-                    </Link>
-                ))}
+               
             </div>
         </section>
 

@@ -88,10 +88,11 @@ const Enquiry = ({ isOpen, onClose }) => {
     if (loading) return;
 
     const formData = new FormData(e.target);
+    const webisteUrl = window.location.hostname + window.location.pathname;
 
     const data = {
         supplierToken: "6a2ce60e0dd27bd1398df008",
-      platform: "BhagyaLaxmi Industries Enquiry Form",
+      platform: webisteUrl || "BhagyaLaxmi Industries Enquiry Form",
       platformEmail: "bhagyalaxmigroup12@gmail.com",
       name: formData.get("name"),
       email: formData.get("email"),
@@ -206,7 +207,8 @@ const Enquiry = ({ isOpen, onClose }) => {
               <input
                 type="tel"
                 name="phone"
-                maxLength={10}
+                  maxLength={10}
+                  minLength={10}
                 placeholder="Your Phone"
                 className="w-full focus:outline-none"
               />

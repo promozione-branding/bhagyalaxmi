@@ -75,9 +75,11 @@ const CTASection = () => {
 
     const formData = new FormData(e.target);
 
+    const webisteUrl = window.location.hostname + window.location.pathname;
+
     const data = {
         supplierToken: "6a2ce60e0dd27bd1398df008",
-      platform: "BhagyaLaxmi Industries CTA Form",
+      platform:webisteUrl || "BhagyaLaxmi Industries CTA Form",
       platformEmail: "bhagyalaxmigroup12@gmail.com",
       name: formData.get("name"),
       email: formData.get("email"),
@@ -190,6 +192,8 @@ const CTASection = () => {
               <input
                 type="text"
                 name="phone"
+                  maxLength={10}
+                  minLength={10}
                 required
                 className="w-full p-3 border-2 border-black rounded-lg focus:ring focus:ring-orange-300"
                 placeholder="Enter your phone number"
