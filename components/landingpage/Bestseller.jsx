@@ -109,14 +109,15 @@ export default function ProductSectionPremium() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-[340px_1fr] gap-8 md:gap-12">
+      <div className="grid min-w-0 gap-5 md:grid-cols-[340px_1fr] md:gap-12">
         {/* LEFT SELECTOR */}
-        <div className="space-y-4 sm:space-y-5">
+        <div className="flex min-w-0 gap-3 overflow-x-auto pb-2 md:flex-col md:gap-4 md:overflow-visible md:pb-0">
           {products.map((item, index) => (
             <button
               key={item.id}
               onClick={() => setActive(index)}
-              className={`relative w-full text-left rounded-2xl p-4 sm:p-5 transition-all duration-300 
+              aria-pressed={active === index}
+              className={`relative min-w-[190px] flex-1 text-left rounded-2xl p-4 sm:p-5 transition-all duration-300 md:min-w-0 md:w-full md:flex-none
                 ${
                   active === index
                     ? "bg-gradient-to-r from-blue-500/20 to-transparent shadow-lg border border-blue-500"
@@ -138,15 +139,15 @@ export default function ProductSectionPremium() {
         </div>
 
         {/* RIGHT PANEL */}
-        <div className="relative rounded-3xl bg-white/80 backdrop-blur-xl shadow-2xl border border-blue-200 p-5 sm:p-7 md:p-10">
-          <div className="grid md:grid-cols-2 gap-8 sm:gap-10 items-center">
+        <div className="relative min-w-0 rounded-3xl bg-white/80 backdrop-blur-xl shadow-2xl border border-blue-200 p-4 sm:p-7 md:p-10">
+          <div className="grid min-w-0 items-center gap-6 sm:gap-10 md:grid-cols-2">
             {/* IMAGE */}
-            <div className="relative flex justify-center">
+            <div className="relative flex min-w-0 justify-center">
               <div className="absolute -bottom-6 w-[70%] h-6 bg-black/10 blur-xl rounded-full" />
 
               <Suspense
                 fallback={
-                  <div className="w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] bg-gray-200 animate-pulse rounded-2xl" />
+                  <div className="h-[220px] w-[220px] rounded-2xl bg-gray-200 animate-pulse sm:h-[320px] sm:w-[320px]" />
                 }
               >
                 <Image
@@ -154,44 +155,44 @@ export default function ProductSectionPremium() {
                   alt={product.name}
                   width={420}
                   height={420}
-                  className="object-contain relative z-10 w-[260px] h-auto sm:w-[320px] md:w-[420px]"
+                  className="relative z-10 h-auto w-[220px] max-w-full object-contain sm:w-[320px] md:w-[420px]"
                 />
               </Suspense>
 
-              <span className="absolute top-4 right-0 bg-[#FAAC18] text-white text-xs px-4 py-1 rounded-full z-10">
+              <span className="absolute right-0 top-2 z-10 rounded-full bg-[#FAAC18] px-3 py-1 text-xs text-white sm:top-4 sm:px-4">
                 {product.badge}
               </span>
             </div>
 
             {/* DETAILS */}
-            <div className="w-full">
-              <h3 className="text-2xl sm:text-3xl font-bold mb-5 sm:mb-6">
+            <div className="w-full min-w-0">
+              <h3 className="mb-5 text-xl font-bold sm:mb-6 sm:text-3xl">
                 {product.name}
               </h3>
 
-              <div className="space-y-3 sm:space-y-4 text-sm">
+              <div className="space-y-3 text-sm sm:space-y-4">
                 {Object.entries(product.details).map(([key, val]) => (
                   <div
                     key={key}
-                    className="flex items-start sm:items-center justify-between gap-4"
+                    className="flex min-w-0 flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
                   >
-                    <span className="text-black flex items-center gap-2 whitespace-nowrap">
+                    <span className="flex min-w-0 items-center gap-2 text-black">
                       <CheckCheck className="text-blue-600 shrink-0" />
                       {key}
                     </span>
-                    <span className="font-medium text-black text-right break-words">
+                    <span className="break-words font-medium text-black sm:text-right">
                       {val}
                     </span>
                   </div>
                 ))}
               </div>
-                <div className="flex gap-2">
+                <div className="flex flex-col gap-2 sm:flex-row">
               <a
                 onClick={() => handleWhatsappClick({ source: "Website BestSeller", obj:product.name })}
                 href={`https://wa.me/9560156328?text=I want to enquire about ${product.name}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-7 sm:mt-8 inline-flex whitespace-nowrap items-center gap-2 bg-[#7ccf00] text-white px-4 sm:px-8 py-2 sm:py-4 cursor-pointer rounded-xl font-semibold hover:shadow-lg hover:bg-green-600 transition w-full sm:w-auto justify-center"
+                className="mt-5 inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-[#7ccf00] px-4 py-3 font-semibold text-white transition hover:bg-green-600 hover:shadow-lg sm:mt-8 sm:w-auto sm:px-6 sm:py-4"
               >
                 Whatsapp Now
                 <span className="text-xl">
@@ -202,7 +203,7 @@ export default function ProductSectionPremium() {
                 href={product.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-7 sm:mt-8 inline-flex whitespace-nowrap items-center gap-2 bg-blue-500 text-white px-4 sm:px-8 py-2 sm:py-4 cursor-pointer rounded-xl font-semibold hover:shadow-lg hover:bg-blue-600 transition w-full sm:w-auto justify-center"
+                className="mt-0 inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-blue-500 px-4 py-3 font-semibold text-white transition hover:bg-blue-600 hover:shadow-lg sm:mt-8 sm:w-auto sm:px-6 sm:py-4"
               >
                 View product
                 <span className="text-xl">

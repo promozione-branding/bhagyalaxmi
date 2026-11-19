@@ -238,10 +238,14 @@ export default function Header({ onClose }) {
               <Link href="/products" onClick={() => setMenuOpen(false)}>
                 All Products
               </Link>
+                <Link href="/dairy-processing-plant" className="hover:text-lime-300">
+                Dairy Processing Plant
+              </Link>
 
               <Link href="/blogs" onClick={() => setMenuOpen(false)}>
                 Blogs
               </Link>
+             
 
               <Link href="/contact-us" onClick={() => setMenuOpen(false)}>
                 Contact
